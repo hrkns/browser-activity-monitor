@@ -1,26 +1,26 @@
-# Daily Site Time Tracker para Firefox
+# Browser Activity Monitor for Firefox
 
-Extensión WebExtension que mide el tiempo diario en todos los sitios web que visitas.
+A WebExtension that tracks how much time you spend on every website each day.
 
-## Qué cuenta como tiempo
+## What counts as activity
 
-- La pestaña debe estar activa.
-- La ventana de Firefox debe tener foco.
-- El usuario debe estar activo; tras 60 segundos de inactividad deja de contar.
-- Cada hostname se registra por separado; `www.` se elimina para evitar duplicados.
-- Solo se miden páginas HTTP y HTTPS, no páginas internas como `about:`.
-- Los intervalos que cruzan medianoche se dividen entre ambos días.
+- The tab must be active.
+- The Firefox window must be focused.
+- The user must be active; tracking stops after 60 seconds of inactivity.
+- Each hostname is recorded separately; `www.` is removed to avoid duplicates.
+- Only HTTP and HTTPS pages are tracked, not internal pages such as `about:`.
+- Intervals that cross midnight are split between the two days.
 
-## Instalar temporalmente
+## Temporary installation
 
-1. Abre `about:debugging` en Firefox.
-2. Entra en **This Firefox / Este Firefox**.
-3. Pulsa **Load Temporary Add-on / Cargar complemento temporal**.
-4. Selecciona `manifest.json` de esta carpeta.
-5. Pulsa el icono del addon para ver el ranking del día.
+1. Open `about:debugging` in Firefox.
+2. Select **This Firefox**.
+3. Click **Load Temporary Add-on**.
+4. Select `manifest.json` from this directory.
+5. Click the add-on's toolbar icon to see today's ranking.
 
-Las extensiones temporales desaparecen al reiniciar Firefox. Para instalación permanente, el addon debe firmarse/distribuirse según las reglas de Firefox Add-ons.
+Temporary extensions are removed when Firefox restarts. For permanent installation, the add-on must be signed and distributed according to the Firefox Add-ons requirements.
 
-## Datos
+## Data
 
-Se guardan localmente en `browser.storage.local` con claves por fecha (`stats:AAAA-MM-DD`). Los días anteriores no se borran, aunque el popup muestra el día actual. Esto deja preparada una futura vista histórica.
+Data is stored locally in `browser.storage.local` using date-based keys (`stats:YYYY-MM-DD`). Previous days are not deleted, although the popup currently shows only the current day. This keeps the data ready for a future history view.
