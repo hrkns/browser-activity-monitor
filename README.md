@@ -17,7 +17,7 @@ A WebExtension that tracks how much time you spend on every website each day.
 2. Select **This Firefox**.
 3. Click **Load Temporary Add-on**.
 4. Select `manifest.json` from this directory.
-5. Click the add-on's toolbar icon to see today's ranking.
+5. Click the add-on's toolbar icon to see today's total usage and ranking.
 
 Temporary extensions are removed when Firefox restarts. For permanent installation, the add-on must be signed and distributed according to the Firefox Add-ons requirements.
 

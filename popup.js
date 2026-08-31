@@ -1,6 +1,7 @@
 const statsEl = document.getElementById("stats");
 const emptyEl = document.getElementById("empty");
 const dateEl = document.getElementById("date");
+const totalEl = document.getElementById("total");
 
 function formatDuration(totalSeconds) {
   const seconds = Math.floor(totalSeconds);
@@ -18,9 +19,12 @@ async function render() {
   dateEl.textContent = data.date;
 
   const rows = Object.entries(data.stats)
-    .filter(([, seconds]) => seconds > 0)
+    .map(([domain, seconds]) => [domain, Number(seconds)])
+    .filter(([, seconds]) => Number.isFinite(seconds) && seconds > 0)
     .sort((a, b) => b[1] - a[1]);
+  const totalSeconds = rows.reduce((total, [, seconds]) => total + seconds, 0);
 
+  totalEl.textContent = formatDuration(totalSeconds);
   statsEl.replaceChildren();
   emptyEl.hidden = rows.length > 0;
 

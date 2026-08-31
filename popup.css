@@ -16,6 +16,22 @@ header {
 }
 h1 { font-size: 18px; margin: 0 0 2px; }
 header p { margin: 0; opacity: .65; font-size: 12px; }
+.daily-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, CanvasText 8%, transparent);
+  font-size: 13px;
+}
+.daily-total output {
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
 .row {
   display: grid;
   grid-template-columns: 1fr auto;
