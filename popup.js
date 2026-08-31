@@ -4,7 +4,8 @@ const dateEl = document.getElementById("date");
 const totalEl = document.getElementById("total");
 
 function formatDuration(totalSeconds) {
-  const seconds = Math.floor(totalSeconds);
+  const milliseconds = Math.round(totalSeconds * 1000);
+  const seconds = Math.floor(milliseconds / 1000);
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);
   const s = seconds % 60;
