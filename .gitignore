@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+playwright-report/
+test-results/
+web-ext-artifacts/
+blob-report/
+.vitest/
+.vite/
+*.log
+.DS_Store

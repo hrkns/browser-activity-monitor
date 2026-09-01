@@ -24,3 +24,9 @@ Temporary extensions are removed when Firefox restarts. For permanent installati
 ## Data
 
 Data is stored locally in `browser.storage.local` using date-based keys (`stats:YYYY-MM-DD`). Previous days are not deleted, although the popup currently shows only the current day. This keeps the data ready for a future history view.
+
+## Testing
+
+Run `npm test` for the fast browser-free suite. Run `npm run test:all` for Firefox package validation, per-file coverage enforcement, and popup tests in Chromium and Firefox after installing the pinned browsers with `npx playwright install chromium firefox`.
+
+See [TESTING.md](TESTING.md) for setup, command, test-layout, and troubleshooting details.

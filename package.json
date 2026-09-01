@@ -1,0 +1,26 @@
+{
+  "name": "browser-activity-monitor",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Test tooling for the Browser Activity Monitor Firefox extension.",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:unit",
+    "test:unit": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "lint:extension": "web-ext lint --source-dir . --ignore-files \"node_modules/**\" \"coverage/**\" \"e2e/**\" \"playwright-report/**\" \"test-results/**\" \"tests/**\" \"web-ext-artifacts/**\" \".github/**\" package.json package-lock.json playwright.config.js vitest.config.js TESTING.md --warnings-as-errors --no-input --boring",
+    "test:all": "npm run lint:extension && npm run test:coverage && npm run test:e2e"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.59.1",
+    "@vitest/coverage-v8": "4.1.11",
+    "jsdom": "29.1.1",
+    "vitest": "4.1.11",
+    "web-ext": "10.6.0"
+  }
+}
